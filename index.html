@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boris Boris - Resume</title>
+  <title>Boris - Resume</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,14 +17,83 @@
     }
 
     body {
-      padding: 32px 16px;
+      padding: 32px 16px 48px;
       display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-header {
+      grid-column: 1 / -1;
+      position: relative;
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+      color: #f8fafc;
+      padding: 44px 48px 40px;
+      border-bottom: 3px solid #3b82f6;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
+      gap: 6px;
+      height: auto;
+      padding: 0;
+      font-size: 12px;
+      line-height: 1;
+      z-index: 2;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+    }
+
+    .lang-switch button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.38);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      transition: color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .lang-switch button:hover {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .lang-switch button.active {
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 500;
+    }
+
+    .lang-switch .lang-sep {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.22);
+      user-select: none;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1;
     }
 
     .resume {
       display: grid;
       grid-template-columns: 240px 1fr;
+      grid-template-rows: auto 1fr;
       width: 100%;
       max-width: 900px;
       min-height: 1100px;
@@ -32,20 +101,40 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
     }
 
-    /* 左侧栏 */
+    .hero-name {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0.32em;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-role {
+      font-size: 17px;
+      font-weight: 600;
+      color: #bfdbfe;
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
+
+    .hero-line {
+      font-size: 13px;
+      color: rgba(226, 232, 240, 0.88);
+      line-height: 1.75;
+    }
+
+    .hero-line + .hero-line {
+      margin-top: 8px;
+    }
+
     .sidebar {
       background: #1e3a5f;
       color: #f8fafc;
-      padding: 36px 24px;
+      padding: 28px 24px 36px;
     }
 
-    .sidebar .name {
-      font-size: 26px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 28px;
-      border-bottom: 2px solid #3b82f6;
-      padding-bottom: 16px;
+    .sidebar .block:first-child {
+      padding-top: 4px;
     }
 
     .sidebar .block {
@@ -82,7 +171,21 @@
       margin-top: 4px;
     }
 
-    /* 右侧主内容 */
+    .sidebar .skill-group .block-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(147, 197, 253, 0.55);
+      margin-bottom: 5px;
+    }
+
+    .sidebar .skill-group p {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(226, 232, 240, 0.58);
+      line-height: 1.5;
+    }
+
     .main {
       padding: 36px 40px;
     }
@@ -141,16 +244,59 @@
       margin-bottom: 6px;
     }
 
+    .all-skills {
+      color: #475569;
+      line-height: 1.8;
+    }
+
     @media (max-width: 700px) {
+      body {
+        padding: 16px 12px 32px;
+      }
       .resume {
         grid-template-columns: 1fr;
+      }
+      .hero-header {
+        padding: 48px 20px 32px;
+      }
+      .lang-switch {
+        top: 16px;
+        right: 16px;
+        font-size: 11px;
+        gap: 5px;
+      }
+      .lang-switch button {
+        font-size: 11px;
+      }
+      .hero-name {
+        font-size: 24px;
+        letter-spacing: 0.22em;
+        padding-right: 64px;
+        margin-bottom: 14px;
+      }
+      .hero-role {
+        font-size: 15px;
+        margin-bottom: 16px;
+      }
+      .hero-line {
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      .hero-line + .hero-line {
+        margin-top: 6px;
       }
       .sidebar {
         padding: 24px;
       }
+      .main {
+        padding: 24px 20px;
+      }
     }
 
     @media print {
+      .lang-switch {
+        display: none;
+      }
       body {
         background: #fff;
         padding: 0;
@@ -164,134 +310,298 @@
 </head>
 <body>
   <div class="resume">
-    <aside class="sidebar">
-      <h1 class="name">Boris</h1>
+    <header class="hero-header">
+      <nav class="lang-switch" aria-label="Language">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <span class="lang-sep">/</span>
+        <button type="button" data-lang="zh">中文</button>
+      </nav>
+      <div class="hero-name">BORIS</div>
+      <div class="hero-role" data-i18n="heroRole">Senior Frontend / Full Stack Engineer</div>
+      <p class="hero-line" data-i18n="heroStack">Vue3 · TypeScript · Node.js</p>
+      <p class="hero-line" data-i18n="heroWorkflow">AI-assisted Engineering Workflow</p>
+      <p class="hero-line" data-i18n="heroLocation">Remote | Philippines</p>
+    </header>
 
+    <aside class="sidebar">
       <div class="block">
-        <div class="block-title">Contact</div>
-        <p>manila, Philippines</p>
-        <p>Nationality: Chinese</p>
+        <div class="block-title" data-i18n="contact">Contact</div>
+        <p data-i18n="location">manila, Philippines</p>
+        <p data-i18n="nationality">Nationality: Chinese</p>
         <p><a href="tel:9773054562">9773054562</a></p>
         <p><a href="mailto:yang1027392910@gmail.com">yang1027392910@gmail.com</a></p>
       </div>
 
       <div class="block skill-group">
-        <div class="block-title">Frontend</div>
-        <p>Vue2 / Vue3 · React · React Native</p>
-        <p>JavaScript · TypeScript · Composition API</p>
+        <div class="block-title" data-i18n="skillFrontend">Frontend</div>
+        <p data-i18n="skillFrontend1">Vue2 / Vue3 · React · React Native</p>
+        <p data-i18n="skillFrontend2">JavaScript · TypeScript · Composition API</p>
       </div>
 
       <div class="block skill-group">
-        <div class="block-title">Engineering</div>
-        <p>Vite · Webpack · Rollup · CI/CD</p>
-        <p>Docker · Nginx · Git · Monorepo</p>
+        <div class="block-title" data-i18n="skillEngineering">Engineering</div>
+        <p data-i18n="skillEngineering1">Vite · Webpack · Rollup · CI/CD</p>
+        <p data-i18n="skillEngineering2">Docker · Nginx · Git · Monorepo</p>
       </div>
 
       <div class="block skill-group">
-        <div class="block-title">Backend</div>
-        <p>Node.js · Express · RESTful API</p>
-        <p>MySQL · Database Design</p>
+        <div class="block-title" data-i18n="skillBackend">Backend</div>
+        <p data-i18n="skillBackend1">Node.js · Express · RESTful API</p>
+        <p data-i18n="skillBackend2">MySQL · Database Design</p>
       </div>
 
       <div class="block skill-group">
-        <div class="block-title">UI / Visualization</div>
-        <p>TailwindCSS · Sass · ECharts</p>
-        <p>Responsive Design · Dashboard Systems</p>
+        <div class="block-title" data-i18n="skillUI">UI / Visualization</div>
+        <p data-i18n="skillUI1">TailwindCSS · Sass · ECharts</p>
+        <p data-i18n="skillUI2">Responsive Design · Dashboard Systems</p>
       </div>
 
       <div class="block skill-group">
-        <div class="block-title">Performance</div>
-        <p>Code Splitting · Lazy Loading</p>
-        <p>Caching · Performance Optimization</p>
+        <div class="block-title" data-i18n="skillPerformance">Performance</div>
+        <p data-i18n="skillPerformance1">Code Splitting · Lazy Loading</p>
+        <p data-i18n="skillPerformance2">Caching · Performance Optimization</p>
       </div>
 
       <div class="block skill-group">
-        <div class="block-title">Tools &amp; AI</div>
-        <p>VS Code · Cursor · ChatGPT</p>
-        <p>Figma · AI-assisted Development</p>
+        <div class="block-title" data-i18n="skillTools">Tools &amp; AI</div>
+        <p data-i18n="skillTools1">VS Code · Cursor · ChatGPT</p>
+        <p data-i18n="skillTools2">Figma · AI-assisted Development</p>
       </div>
     </aside>
 
     <main class="main">
       <section class="section">
-        <h2 class="section-title">Summary</h2>
-        <p class="summary">Highly skilled Senior Frontend Developer with 9+ years of experience in building enterprise-level web applications and complex component architectures. Proven ability to enhance user experience through significant performance optimizations, reducing load times to under 1.5 seconds. Expertise in Vue.js, React, TypeScript, and CI/CD implementation, leading to improved development efficiency by up to 40% and reduced error rates by 30%. Adept at frontend architecture design and contributing critical data insights for business decisions.</p>
+        <h2 class="section-title" data-i18n="summaryTitle">Summary</h2>
+        <p class="summary" data-i18n="summary"></p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">Work Experience</h2>
+        <h2 class="section-title" data-i18n="workTitle">Work Experience</h2>
 
         <article class="job">
           <div class="job-header">
-            <div class="job-title">Senior Frontend Developer</div>
+            <div class="job-title" data-i18n="job1Title">Senior Frontend Developer</div>
             <div class="job-company">Digiplus</div>
-            <div class="job-meta">Taguig, Philippines · 08/2024 – 04/2026</div>
+            <div class="job-meta" data-i18n="job1Meta">Taguig, Philippines · 08/2024 – 04/2026</div>
           </div>
-          <ul>
-            <li>Architected enterprise web apps with Vue3, TypeScript, Vite, and Pinia; 100,000+ DAU, 99.9% stability.</li>
-            <li>Built dynamic questionnaire system and configurable form architecture; +40% dev efficiency.</li>
-            <li>Integrated Sensors Analytics with 99.8% accuracy for business insights.</li>
-            <li>Developed Gcash mini-program and H5 Promo pages for high-concurrency marketing.</li>
-            <li>Established admin frontend framework and reusable components; +30% team efficiency.</li>
-            <li>Optimized loading via code splitting, lazy loading, and caching; first screen &lt; 1.5s.</li>
-          </ul>
+          <ul data-i18n-list="job1"></ul>
         </article>
 
         <article class="job">
           <div class="job-header">
-            <div class="job-title">Senior Frontend Developer</div>
+            <div class="job-title" data-i18n="job2Title">Senior Frontend Developer</div>
             <div class="job-company">TG Sports</div>
-            <div class="job-meta">Pasay City, Philippines · 01/2022 – 08/2024</div>
+            <div class="job-meta" data-i18n="job2Meta">Pasay City, Philippines · 01/2022 – 08/2024</div>
           </div>
-          <ul>
-            <li>Led frontend for B2C/B2B Web and React Native: chat, sports, lottery, board games.</li>
-            <li>Improved LCP from 13.1s to 2.5s; map scrolling from 20fps to 50fps via time-slicing.</li>
-            <li>Built multi-skin UI library and React+TypeScript headless component library.</li>
-            <li>Implemented react-i18next automation; −50% manual i18n maintenance.</li>
-            <li>Integrated Drone CI/CD; −30% error rate, −50% release cycle time.</li>
-            <li>Built ECharts platform library with drag-drop, themes, and drill-down for dashboards.</li>
-          </ul>
+          <ul data-i18n-list="job2"></ul>
         </article>
 
         <article class="job">
           <div class="job-header">
-            <div class="job-title">Frontend Developer</div>
+            <div class="job-title" data-i18n="job3Title">Frontend Developer</div>
             <div class="job-company">KG Sports</div>
-            <div class="job-meta">Pasay City, Philippines · 05/2018 – 01/2022</div>
+            <div class="job-meta" data-i18n="job3Meta">Pasay City, Philippines · 05/2018 – 01/2022</div>
           </div>
-          <ul>
-            <li>Established Vue ecosystem for PC and mobile web products.</li>
-            <li>Built ElementUI-based component library covering 95%+ admin business lines.</li>
-            <li>Developed Select-v2 virtual selector for 100,000+ rows.</li>
-            <li>Led multi-language transformation with webpack dynamic replacement.</li>
-            <li>Integrated qiankun micro-frontend for sports modules in Baowang system.</li>
-          </ul>
+          <ul data-i18n-list="job3"></ul>
         </article>
       </section>
 
       <section class="section">
-        <h2 class="section-title">Education</h2>
+        <h2 class="section-title" data-i18n="eduTitle">Education</h2>
         <article class="job">
           <div class="job-header">
-            <div class="job-title">Lanzhou Jiaotong University Bowen College</div>
-            <div class="job-company">Bachelor's Degree, Computer Science and Technology</div>
-            <div class="job-meta">Lanzhou, China · 09/2012 – 06/2016</div>
+            <div class="job-title" data-i18n="eduSchool">Lanzhou Jiaotong University Bowen College</div>
+            <div class="job-company" data-i18n="eduDegree">Bachelor's Degree, Computer Science and Technology</div>
+            <div class="job-meta" data-i18n="eduMeta">Lanzhou, China · 09/2012 – 06/2016</div>
           </div>
-          <ul><li>Regular Enrollment</li></ul>
+          <ul data-i18n-list="edu"></ul>
         </article>
       </section>
 
       <section class="section">
-        <h2 class="section-title">All Skills</h2>
-        <p style="color:#475569;line-height:1.8;">
-          JavaScript, TypeScript, Vue2/3, React, React Native, Vite, Webpack, Rollup, TailwindCSS, Sass, Less, CSS3,
-          Responsive Layout, Node.js, Express, RESTful API, Server Deployment, MySQL, Database Design, Data Modeling,
-          CI/CD, Docker, Nginx, Automated Deployment, Performance Optimization, ECharts, Large-screen Display,
-          GIS Visualization, Chart Development, Figma, AI Design Plugins, UI/UX Collaboration, Git, VS Code, ChatGPT,
-          Cursor, Command-line Tools, Team Collaboration, Project Management, Problem Solving, Adaptability, Continuous Learning
-        </p>
+        <h2 class="section-title" data-i18n="allSkillsTitle">All Skills</h2>
+        <p class="all-skills" data-i18n="allSkills"></p>
       </section>
     </main>
   </div>
+
+  <script>
+    const i18n = {
+      en: {
+        heroRole: "Senior Frontend / Full Stack Engineer",
+        heroStack: "Vue3 · TypeScript · Node.js",
+        heroWorkflow: "AI-assisted Engineering Workflow",
+        heroLocation: "Remote | Philippines",
+        contact: "Contact",
+        location: "manila, Philippines",
+        nationality: "Nationality: Chinese",
+        skillFrontend: "Frontend",
+        skillFrontend1: "Vue2 / Vue3 · React · React Native",
+        skillFrontend2: "JavaScript · TypeScript · Composition API",
+        skillEngineering: "Engineering",
+        skillEngineering1: "Vite · Webpack · Rollup · CI/CD",
+        skillEngineering2: "Docker · Nginx · Git · Monorepo",
+        skillBackend: "Backend",
+        skillBackend1: "Node.js · Express · RESTful API",
+        skillBackend2: "MySQL · Database Design",
+        skillUI: "UI / Visualization",
+        skillUI1: "TailwindCSS · Sass · ECharts",
+        skillUI2: "Responsive Design · Dashboard Systems",
+        skillPerformance: "Performance",
+        skillPerformance1: "Code Splitting · Lazy Loading",
+        skillPerformance2: "Caching · Performance Optimization",
+        skillTools: "Tools & AI",
+        skillTools1: "VS Code · Cursor · ChatGPT",
+        skillTools2: "Figma · AI-assisted Development",
+        summaryTitle: "Summary",
+        summary: "Highly skilled Senior Frontend Developer with 9+ years of experience in building enterprise-level web applications and complex component architectures. Proven ability to enhance user experience through significant performance optimizations, reducing load times to under 1.5 seconds. Expertise in Vue.js, React, TypeScript, and CI/CD implementation, leading to improved development efficiency by up to 40% and reduced error rates by 30%. Adept at frontend architecture design and contributing critical data insights for business decisions.",
+        workTitle: "Work Experience",
+        job1Title: "Senior Frontend Developer",
+        job1Meta: "Taguig, Philippines · 08/2024 – 04/2026",
+        job1: [
+          "Architected enterprise web apps with Vue3, TypeScript, Vite, and Pinia; 100,000+ DAU, 99.9% stability.",
+          "Built dynamic questionnaire system and configurable form architecture; +40% dev efficiency.",
+          "Integrated Sensors Analytics with 99.8% accuracy for business insights.",
+          "Developed Gcash mini-program and H5 Promo pages for high-concurrency marketing.",
+          "Established admin frontend framework and reusable components; +30% team efficiency.",
+          "Optimized loading via code splitting, lazy loading, and caching; first screen < 1.5s."
+        ],
+        job2Title: "Senior Frontend Developer",
+        job2Meta: "Pasay City, Philippines · 01/2022 – 08/2024",
+        job2: [
+          "Led frontend for B2C/B2B Web and React Native: chat, sports, lottery, board games.",
+          "Improved LCP from 13.1s to 2.5s; map scrolling from 20fps to 50fps via time-slicing.",
+          "Built multi-skin UI library and React+TypeScript headless component library.",
+          "Implemented react-i18next automation; −50% manual i18n maintenance.",
+          "Integrated Drone CI/CD; −30% error rate, −50% release cycle time.",
+          "Built ECharts platform library with drag-drop, themes, and drill-down for dashboards."
+        ],
+        job3Title: "Frontend Developer",
+        job3Meta: "Pasay City, Philippines · 05/2018 – 01/2022",
+        job3: [
+          "Established Vue ecosystem for PC and mobile web products.",
+          "Built ElementUI-based component library covering 95%+ admin business lines.",
+          "Developed Select-v2 virtual selector for 100,000+ rows.",
+          "Led multi-language transformation with webpack dynamic replacement.",
+          "Integrated qiankun micro-frontend for sports modules in Baowang system."
+        ],
+        eduTitle: "Education",
+        eduSchool: "Lanzhou Jiaotong University Bowen College",
+        eduDegree: "Bachelor's Degree, Computer Science and Technology",
+        eduMeta: "Lanzhou, China · 09/2012 – 06/2016",
+        edu: ["Regular Enrollment"],
+        allSkillsTitle: "All Skills",
+        allSkills: "JavaScript, TypeScript, Vue2/3, React, React Native, Vite, Webpack, Rollup, TailwindCSS, Sass, Less, CSS3, Responsive Layout, Node.js, Express, RESTful API, Server Deployment, MySQL, Database Design, Data Modeling, CI/CD, Docker, Nginx, Automated Deployment, Performance Optimization, ECharts, Large-screen Display, GIS Visualization, Chart Development, Figma, AI Design Plugins, UI/UX Collaboration, Git, VS Code, ChatGPT, Cursor, Command-line Tools, Team Collaboration, Project Management, Problem Solving, Adaptability, Continuous Learning"
+      },
+      zh: {
+        heroRole: "高级前端 / 全栈工程师",
+        heroStack: "Vue3 · TypeScript · Node.js",
+        heroWorkflow: "AI 辅助工程化工作流",
+        heroLocation: "远程 | 菲律宾",
+        contact: "联系方式",
+        location: "马尼拉，菲律宾",
+        nationality: "国籍：中国",
+        skillFrontend: "前端",
+        skillFrontend1: "Vue2 / Vue3 · React · React Native",
+        skillFrontend2: "JavaScript · TypeScript · Composition API",
+        skillEngineering: "工程化",
+        skillEngineering1: "Vite · Webpack · Rollup · CI/CD",
+        skillEngineering2: "Docker · Nginx · Git · Monorepo",
+        skillBackend: "后端",
+        skillBackend1: "Node.js · Express · RESTful API",
+        skillBackend2: "MySQL · 数据库设计",
+        skillUI: "UI / 可视化",
+        skillUI1: "TailwindCSS · Sass · ECharts",
+        skillUI2: "响应式设计 · 大屏系统",
+        skillPerformance: "性能优化",
+        skillPerformance1: "代码分割 · 懒加载",
+        skillPerformance2: "缓存 · 性能调优",
+        skillTools: "工具与 AI",
+        skillTools1: "VS Code · Cursor · ChatGPT",
+        skillTools2: "Figma · AI 辅助开发",
+        summaryTitle: "个人简介",
+        summary: "拥有 9+ 年经验的高级前端开发工程师，擅长构建企业级 Web 应用与复杂组件架构。通过性能优化显著提升用户体验，将首屏加载时间降至 1.5 秒以内。精通 Vue.js、React、TypeScript 及 CI/CD 实践，开发效率最高提升 40%，错误率降低 30%。具备前端架构设计能力，能为业务决策提供关键数据洞察。",
+        workTitle: "工作经历",
+        job1Title: "高级前端开发工程师",
+        job1Meta: "菲律宾塔吉格 · 2024/08 – 2026/04",
+        job1: [
+          "基于 Vue3、TypeScript、Vite、Pinia 架构并实现企业级 Web 应用，日活 10 万+，系统稳定性 99.9%。",
+          "主导动态问卷系统与可配置表单架构开发，实现高度可配置的表单渲染与数据管理，开发效率提升 40%。",
+          "集成 Sensors Analytics 埋点方案，用户行为数据采集准确率 99.8%，为业务决策提供关键洞察。",
+          "参与 Gcash 小程序及 H5 营销页开发，保障高并发场景下系统稳定，适配多种营销场景。",
+          "搭建后台管理系统前端框架并封装通用组件，通过组件复用减少重复开发，团队效率提升 30%。",
+          "通过代码分割、懒加载、组件优化与 API 缓存策略优化加载体验，首屏加载时间低于 1.5 秒。"
+        ],
+        job2Title: "高级前端开发工程师",
+        job2Meta: "菲律宾帕赛 · 2022/01 – 2024/08",
+        job2: [
+          "负责 B2C/B2B 产品 Web 端与 React Native 移动端前端开发，涵盖聊天室、体育、彩票、棋牌等核心模块。",
+          "通过 Webpack 代码分割、懒加载等技术将 LCP 从 13.1s 优化至 2.5s；使用时间切片解决地图滚动卡顿，帧率从 20fps 提升至 50fps。",
+          "基于 cube-UI 构建多皮肤 UI 库，并主导 React+TypeScript 无头组件库开发，提升产品一致性与开发效率。",
+          "使用 react-i18next 实现国际化方案，自动化多语言文件编译，人工维护工作量减少 50%。",
+          "集成 Drone CI/CD 与内部质量监控系统，自动化集成与测试，错误率降低 30%，发布周期缩短 50%。",
+          "基于 ECharts 构建平台化图表库，支持拖拽、多主题及图表联动钻取，用于大屏数据可视化项目。"
+        ],
+        job3Title: "前端开发工程师",
+        job3Meta: "菲律宾帕赛 · 2018/05 – 2022/01",
+        job3: [
+          "主导 PC 与移动端 Web 产品前端技术选型，确立 Vue 生态作为核心技术栈支撑业务落地。",
+          "基于 ElementUI 二次开发构建公司公共组件库，覆盖 95% 以上后台管理业务线。",
+          "开发 Select-v2 虚拟选择器组件，支持 10 万+ 数据加载，解决传统 Select 性能瓶颈。",
+          "主导包网 UI 与后台系统多语言改造，通过 Webpack 命令动态替换多语言变量，提升多人协作效率。",
+          "团队采用 qiankun 微前端技术，将体育项目嵌入包网系统，实现项目复用与迭代管理。"
+        ],
+        eduTitle: "教育背景",
+        eduSchool: "兰州交通大学博文学院",
+        eduDegree: "本科 · 计算机科学与技术",
+        eduMeta: "中国兰州 · 2012/09 – 2016/06",
+        edu: ["统招全日制"],
+        allSkillsTitle: "全部技能",
+        allSkills: "JavaScript、TypeScript、Vue2/3、React、React Native、Vite、Webpack、Rollup、TailwindCSS、Sass、Less、CSS3、响应式布局、Node.js、Express、RESTful API、服务器部署、MySQL、数据库设计与优化、数据建模、CI/CD、Docker、Nginx、自动化部署、性能优化、ECharts、大屏展示、GIS 可视化、图表开发、Figma、AI 设计插件、UI/UX 协作、Git、VS Code、ChatGPT、Cursor、命令行工具、团队协作、项目管理、问题解决、适应能力、持续学习"
+      }
+    };
+
+    function getLangFromUrl() {
+      return new URLSearchParams(location.search).get("lang") === "zh_CN" ? "zh" : "en";
+    }
+
+    function setLang(lang) {
+      const data = i18n[lang];
+      if (!data) return;
+
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.title = lang === "zh" ? "Boris - 简历" : "Boris - Resume";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (data[key] !== undefined) el.textContent = data[key];
+      });
+
+      document.querySelectorAll("[data-i18n-list]").forEach((ul) => {
+        const key = ul.getAttribute("data-i18n-list");
+        const items = data[key];
+        if (!items) return;
+        ul.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
+      });
+
+      document.querySelectorAll(".lang-switch button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      const url = new URL(location.href);
+      if (lang === "zh") {
+        url.searchParams.set("lang", "zh_CN");
+      } else {
+        url.searchParams.delete("lang");
+      }
+      history.replaceState(null, "", url);
+    }
+
+    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    });
+
+    setLang(getLangFromUrl());
+  </script>
 </body>
 </html>
