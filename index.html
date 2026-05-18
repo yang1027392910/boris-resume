@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boris Boris - Resume</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: #cbd5e1;
+      font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #1e293b;
+    }
+
+    body {
+      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      width: 100%;
+      max-width: 900px;
+      min-height: 1100px;
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    /* 左侧栏 */
+    .sidebar {
+      background: #1e3a5f;
+      color: #f8fafc;
+      padding: 36px 24px;
+    }
+
+    .sidebar .name {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 28px;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 16px;
+    }
+
+    .sidebar .block {
+      margin-bottom: 28px;
+    }
+
+    .sidebar .block-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 10px;
+    }
+
+    .sidebar p,
+    .sidebar a {
+      font-size: 13px;
+      color: #e2e8f0;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .sidebar a {
+      color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .skill-tags {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .skill-tags li {
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    /* 右侧主内容 */
+    .main {
+      padding: 36px 40px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e3a5f;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 2px solid #1e3a5f;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+
+    .summary {
+      color: #334155;
+      text-align: justify;
+    }
+
+    .job {
+      margin-bottom: 22px;
+    }
+
+    .job-header {
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .job-company {
+      font-weight: 600;
+      color: #1e40af;
+    }
+
+    .job-meta {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .job ul {
+      margin-top: 8px;
+      padding-left: 20px;
+      color: #334155;
+    }
+
+    .job li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 700px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        padding: 24px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .resume {
+        box-shadow: none;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <aside class="sidebar">
+      <h1 class="name">Boris</h1>
+
+      <div class="block">
+        <div class="block-title">Contact</div>
+        <p>manila, Philippines</p>
+        <p>Nationality: Chinese</p>
+        <p><a href="tel:9773054562">9773054562</a></p>
+        <p><a href="mailto:yang1027392910@gmail.com">yang1027392910@gmail.com</a></p>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Skills</div>
+        <ul class="skill-tags">
+          <li>JavaScript / TypeScript</li>
+          <li>Vue2/3 · React · RN</li>
+          <li>Vite · Webpack · Rollup</li>
+          <li>Node.js · Express · MySQL</li>
+          <li>CI/CD · Docker · Nginx</li>
+          <li>ECharts · GIS · Figma</li>
+          <li>Git · VS Code · Cursor</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">Highly skilled Senior Frontend Developer with 6+ years of experience in building enterprise-level web applications and complex component architectures. Proven ability to enhance user experience through significant performance optimizations, reducing load times to under 1.5 seconds. Expertise in Vue.js, React, TypeScript, and CI/CD implementation, leading to improved development efficiency by up to 40% and reduced error rates by 30%. Adept at frontend architecture design and contributing critical data insights for business decisions.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Work Experience</h2>
+
+        <article class="job">
+          <div class="job-header">
+            <div class="job-title">Senior Frontend Developer</div>
+            <div class="job-company">Digiplus</div>
+            <div class="job-meta">Taguig, Philippines · 08/2024 – 04/2026</div>
+          </div>
+          <ul>
+            <li>Architected enterprise web apps with Vue3, TypeScript, Vite, and Pinia; 100,000+ DAU, 99.9% stability.</li>
+            <li>Built dynamic questionnaire system and configurable form architecture; +40% dev efficiency.</li>
+            <li>Integrated Sensors Analytics with 99.8% accuracy for business insights.</li>
+            <li>Developed Gcash mini-program and H5 Promo pages for high-concurrency marketing.</li>
+            <li>Established admin frontend framework and reusable components; +30% team efficiency.</li>
+            <li>Optimized loading via code splitting, lazy loading, and caching; first screen &lt; 1.5s.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <div class="job-title">Senior Frontend Developer</div>
+            <div class="job-company">TG Sports</div>
+            <div class="job-meta">Pasay City, Philippines · 01/2022 – 08/2024</div>
+          </div>
+          <ul>
+            <li>Led frontend for B2C/B2B Web and React Native: chat, sports, lottery, board games.</li>
+            <li>Improved LCP from 13.1s to 2.5s; map scrolling from 20fps to 50fps via time-slicing.</li>
+            <li>Built multi-skin UI library and React+TypeScript headless component library.</li>
+            <li>Implemented react-i18next automation; −50% manual i18n maintenance.</li>
+            <li>Integrated Drone CI/CD; −30% error rate, −50% release cycle time.</li>
+            <li>Built ECharts platform library with drag-drop, themes, and drill-down for dashboards.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <div class="job-title">Frontend Developer</div>
+            <div class="job-company">KG Sports</div>
+            <div class="job-meta">Pasay City, Philippines · 05/2018 – 01/2022</div>
+          </div>
+          <ul>
+            <li>Established Vue ecosystem for PC and mobile web products.</li>
+            <li>Built ElementUI-based component library covering 95%+ admin business lines.</li>
+            <li>Developed Select-v2 virtual selector for 100,000+ rows.</li>
+            <li>Led multi-language transformation with webpack dynamic replacement.</li>
+            <li>Integrated qiankun micro-frontend for sports modules in Baowang system.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+        <article class="job">
+          <div class="job-header">
+            <div class="job-title">Lanzhou Jiaotong University Bowen College</div>
+            <div class="job-company">Bachelor's Degree, Computer Science and Technology</div>
+            <div class="job-meta">Lanzhou, China · 09/2012 – 06/2016</div>
+          </div>
+          <ul><li>Regular Enrollment</li></ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">All Skills</h2>
+        <p style="color:#475569;line-height:1.8;">
+          JavaScript, TypeScript, Vue2/3, React, React Native, Vite, Webpack, Rollup, TailwindCSS, Sass, Less, CSS3,
+          Responsive Layout, Node.js, Express, RESTful API, Server Deployment, MySQL, Database Design, Data Modeling,
+          CI/CD, Docker, Nginx, Automated Deployment, Performance Optimization, ECharts, Large-screen Display,
+          GIS Visualization, Chart Development, Figma, AI Design Plugins, UI/UX Collaboration, Git, VS Code, ChatGPT,
+          Cursor, Command-line Tools, Team Collaboration, Project Management, Problem Solving, Adaptability, Continuous Learning
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
