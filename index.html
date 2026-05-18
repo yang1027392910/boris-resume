@@ -49,7 +49,7 @@
     }
 
     .sidebar .block {
-      margin-bottom: 28px;
+      margin-bottom: 18px;
     }
 
     .sidebar .block-title {
@@ -58,14 +58,14 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #93c5fd;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .sidebar p,
     .sidebar a {
-      font-size: 13px;
+      font-size: 12px;
       color: #e2e8f0;
-      line-height: 1.6;
+      line-height: 1.45;
       word-break: break-word;
     }
 
@@ -78,18 +78,8 @@
       text-decoration: underline;
     }
 
-    .skill-tags {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .skill-tags li {
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 4px 8px;
-      border-radius: 4px;
+    .sidebar .skill-group p + p {
+      margin-top: 4px;
     }
 
     /* 右侧主内容 */
@@ -185,24 +175,47 @@
         <p><a href="mailto:yang1027392910@gmail.com">yang1027392910@gmail.com</a></p>
       </div>
 
-      <div class="block">
-        <div class="block-title">Skills</div>
-        <ul class="skill-tags">
-          <li>JavaScript / TypeScript</li>
-          <li>Vue2/3 · React · RN</li>
-          <li>Vite · Webpack · Rollup</li>
-          <li>Node.js · Express · MySQL</li>
-          <li>CI/CD · Docker · Nginx</li>
-          <li>ECharts · GIS · Figma</li>
-          <li>Git · VS Code · Cursor</li>
-        </ul>
+      <div class="block skill-group">
+        <div class="block-title">Frontend</div>
+        <p>Vue2 / Vue3 · React · React Native</p>
+        <p>JavaScript · TypeScript · Composition API</p>
+      </div>
+
+      <div class="block skill-group">
+        <div class="block-title">Engineering</div>
+        <p>Vite · Webpack · Rollup · CI/CD</p>
+        <p>Docker · Nginx · Git · Monorepo</p>
+      </div>
+
+      <div class="block skill-group">
+        <div class="block-title">Backend</div>
+        <p>Node.js · Express · RESTful API</p>
+        <p>MySQL · Database Design</p>
+      </div>
+
+      <div class="block skill-group">
+        <div class="block-title">UI / Visualization</div>
+        <p>TailwindCSS · Sass · ECharts</p>
+        <p>Responsive Design · Dashboard Systems</p>
+      </div>
+
+      <div class="block skill-group">
+        <div class="block-title">Performance</div>
+        <p>Code Splitting · Lazy Loading</p>
+        <p>Caching · Performance Optimization</p>
+      </div>
+
+      <div class="block skill-group">
+        <div class="block-title">Tools &amp; AI</div>
+        <p>VS Code · Cursor · ChatGPT</p>
+        <p>Figma · AI-assisted Development</p>
       </div>
     </aside>
 
     <main class="main">
       <section class="section">
         <h2 class="section-title">Summary</h2>
-        <p class="summary">Highly skilled Senior Frontend Developer with 6+ years of experience in building enterprise-level web applications and complex component architectures. Proven ability to enhance user experience through significant performance optimizations, reducing load times to under 1.5 seconds. Expertise in Vue.js, React, TypeScript, and CI/CD implementation, leading to improved development efficiency by up to 40% and reduced error rates by 30%. Adept at frontend architecture design and contributing critical data insights for business decisions.</p>
+        <p class="summary">Highly skilled Senior Frontend Developer with 9+ years of experience in building enterprise-level web applications and complex component architectures. Proven ability to enhance user experience through significant performance optimizations, reducing load times to under 1.5 seconds. Expertise in Vue.js, React, TypeScript, and CI/CD implementation, leading to improved development efficiency by up to 40% and reduced error rates by 30%. Adept at frontend architecture design and contributing critical data insights for business decisions.</p>
       </section>
 
       <section class="section">
