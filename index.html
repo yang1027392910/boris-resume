@@ -9,11 +9,16 @@
 <body>
  <div class="resume">
     <header class="hero-header">
-      <nav class="lang-switch" aria-label="Language">
-        <button type="button" data-lang="en" class="active">EN</button>
-        <span class="lang-sep">/</span>
-        <button type="button" data-lang="zh">中文</button>
-      </nav>
+      <div class="hero-actions">
+        <nav class="lang-switch" aria-label="Language">
+          <button type="button" data-lang="en" class="active">EN</button>
+          <span class="lang-sep">/</span>
+          <button type="button" data-lang="zh">中文</button>
+        </nav>
+        <a class="download-btn" href="resume.pdf" download>
+          <span data-i18n="downloadPdf">Download PDF</span>
+        </a>
+      </div>
       <div class="hero-name">BORIS</div>
       <div class="hero-role" data-i18n="heroRole">Senior Frontend / Full Stack Engineer</div>
       <p class="hero-line" data-i18n="heroStack">Vue3 · TypeScript · Node.js</p>

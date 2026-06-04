@@ -24,6 +24,7 @@
   "skillTools": "工具与 AI",
   "skillTools1": "VS Code · Cursor · ChatGPT",
   "skillTools2": "Figma · AI 辅助开发",
+  "downloadPdf": "下载简历",
   "summaryTitle": "个人简介",
   "summary": "拥有 9+ 年经验的高级前端开发工程师，擅长构建企业级 Web 应用与复杂组件架构。通过性能优化显著提升用户体验，将首屏加载时间降至 1.5 秒以内。精通 Vue.js、React、TypeScript 及 CI/CD 实践，开发效率最高提升 40%，错误率降低 30%。具备前端架构设计能力，能为业务决策提供关键数据洞察。",
   "workTitle": "工作经历",

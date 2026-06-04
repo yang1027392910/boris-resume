@@ -25,22 +25,24 @@ body {
   border-bottom: 3px solid #3b82f6;
 }
 
-.lang-switch {
+.hero-actions {
   position: absolute;
   top: 20px;
   right: 24px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: auto;
-  padding: 0;
-  font-size: 12px;
-  line-height: 1;
+  gap: 10px;
   z-index: 2;
-  background: transparent;
-  border: none;
-  border-radius: 0;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
 }
 
 .lang-switch button {
@@ -49,34 +51,56 @@ body {
   justify-content: center;
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.72);
   font-family: inherit;
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
   height: auto;
-  padding: 0;
+  padding: 0 4px;
   margin: 0;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s, opacity 0.2s;
   -webkit-appearance: none;
   appearance: none;
 }
 
 .lang-switch button:hover {
-  color: rgba(255, 255, 255, 0.62);
+  color: #f8fafc;
 }
 
 .lang-switch button.active {
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 500;
+  color: #f8fafc;
+  font-weight: 600;
 }
 
-.lang-switch .lang-sep {
+.download-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.22);
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.download-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.34);
+  transform: translateY(-1px);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+.lang-switch .lang-sep {
+  color: rgba(255, 255, 255, 0.36);
   user-select: none;
   font-weight: 300;
   font-size: 11px;
@@ -114,6 +138,10 @@ body {
   font-size: 13px;
   color: rgba(226, 232, 240, 0.88);
   line-height: 1.75;
+}
+
+.hero-line[data-i18n="heroStack"] {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-line + .hero-line {
@@ -252,9 +280,14 @@ body {
   .hero-header {
     padding: 48px 20px 32px;
   }
-  .lang-switch {
+  .hero-actions {
     top: 16px;
     right: 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .lang-switch {
     font-size: 11px;
     gap: 5px;
   }

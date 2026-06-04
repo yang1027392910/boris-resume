@@ -4,7 +4,8 @@
   "description": "",
   "main": "html-to-pdf.js",
   "scripts": {
-    "preview": "npx --yes serve . -p 3000",
+    "start": "npx --yes serve . -p 3000",
+    "preview": "npm run start",
     "pdf": "node html-to-pdf.js",
     "pdf:zh": "node html-to-pdf.js index.html resume.pdf zh_CN"
   },
