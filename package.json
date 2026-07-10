@@ -7,13 +7,16 @@
     "start": "npx --yes serve . -p 3000",
     "preview": "npm run start",
     "pdf": "node html-to-pdf.js",
-    "pdf:zh": "node html-to-pdf.js index.html resume.pdf zh_CN"
+    "pdf:zh": "node html-to-pdf.js index.html resume.pdf zh_CN",
+    "word": "node html-to-word.js",
+    "word:zh": "node html-to-word.js index.html resume.docx zh_CN"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "html-docx-js": "^0.3.1",
     "playwright": "^1.60.0"
   }
 }
